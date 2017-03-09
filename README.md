@@ -491,7 +491,7 @@ Android开发存在着众多版本的不同，比如`compileSdkVersion`,`minSdkV
 * **[Retrofit][Retrofit]**
 * **[RxAndroid][RxAndroid]**
 * **[OkHttp][OkHttp]**
-* **[Glide/Fresco][Glide/Fresco]**
+* **[Glide][Glide]**/**[Fresco]/Fresco]**
 * **[Gson][Gson]**/**[Fastjson][Fastjson]**
 * **[EventBus][EventBus]**/**[AndroidEventBus][AndroidEventBus]**
 * **[GreenDao][GreenDao]**
@@ -589,11 +589,12 @@ public static byte[] bitmap2Bytes(Bitmap bitmap, CompressFormat format) {
 
 ### 10 其他的一些规范
 
-1. 合理布局，有效运用`<merge>`,`<ViewStub>`,`<include>`标签。
-2. 相关联的方法尽量放在一起。
-3. 不要忘了内存泄漏的检测。
-4. 子module中的依赖尽可能使用provided。
-5. 当一个类有多个构造函数，或是多个同名方法，这些函数/方法应该按顺序出现在一起，中间不要放进其它函数/方法。
+1. 合理布局，有效运用`<merge>`,`<ViewStub>`,`<include>`标签；
+2. 方法基本上都按照调用的先后顺序在各自区块中排列；
+3. 相关功能作为小区块放在一起（或者封装掉）；
+4. 当一个类有多个构造函数，或是多个同名方法，这些函数/方法应该按顺序出现在一起，中间不要放进其它函数/方法；
+5. 子module中的依赖尽可能使用provided；
+6. 不要忘了内存泄漏的检测；
 
 
 ## 附录
@@ -679,9 +680,18 @@ public static byte[] bitmap2Bytes(Bitmap bitmap, CompressFormat format) {
 [Android开发之版本统一规范]: http://www.jianshu.com/p/db6ef4cfa5d1
 [Android 流行框架查速表]: http://www.ctolib.com/cheatsheets-Android-ch.html
 [Android开发人员不得不收集的代码]: https://github.com/Blankj/AndroidUtilCode
-
-
-
+[Retrofit]: https://github.com/square/retrofit
+[RxAndroid]: https://github.com/ReactiveX/RxAndroid
+[OkHttp]: https://github.com/square/okhttp
+[Glide]: https://github.com/bumptech/glide
+[Fresco]: https://github.com/facebook/fresco
+[Gson]: https://github.com/google/gson
+[Fastjson]: https://github.com/alibaba/fastjson
+[EventBus]: https://github.com/greenrobot/EventBus
+[AndroidEventBus]: https://github.com/bboyfeiyu/AndroidEventBus
+[GreenDao]: https://github.com/greenrobot/greenDAO
+[Dagger2]: https://github.com/google/dagger
+[Tinker]: https://github.com/Tencent/tinker
 [Android 开发最佳实践]: https://github.com/futurice/android-best-practices/blob/master/translations/Chinese/README.cn.md
 [Android 编码规范]: http://www.jianshu.com/p/0a984f999592
 [阿里巴巴Java开发手册]: https://102.alibaba.com/newsInfo.htm?newsId=6
